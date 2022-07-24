@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://static/checkers-tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://static/patterns-tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Board.gd" type="Script" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=4]
+
+[node name="Board" type="Node2D"]
+position = Vector2( 266, 54 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.894118, 0.894118, 0.894118, 1 )
+margin_left = -55.0
+margin_top = -4.0
+margin_right = 571.0
+margin_bottom = 486.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="BoardPattern" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 20, 32 )
+format = 1
+tile_data = PoolIntArray( 65536, 3, 0, 65538, 1, 0, 65540, 3, 0, 65542, 1, 0, 65544, 3, 0, 65546, 1, 0, 65550, 3, 0, 65552, 1, 0, 65554, 3, 0, 65556, 1, 0, 65558, 3, 0, 65560, 1, 0, 524288, 0, 0, 524290, 2, 0, 524292, 0, 0, 524294, 2, 0, 524296, 0, 0, 524298, 2, 0, 524302, 0, 0, 524304, 2, 0, 524306, 0, 0, 524308, 2, 0, 524310, 0, 0, 524312, 2, 0 )
+
+[node name="Checkers" type="TileMap" parent="."]
+position = Vector2( 6, 32 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 20, 32 )
+centered_textures = true
+format = 1
