@@ -10,7 +10,6 @@ onready var checker_tiles = [
 ]
 
 func _ready():
-	print(checkers_tilemap.get_used_cells())
 	_init_board_space()
 	add_checkers(GameMeta.meta["player_1_init"], 0)
 	add_checkers(GameMeta.meta["player_2_init"], 1)
