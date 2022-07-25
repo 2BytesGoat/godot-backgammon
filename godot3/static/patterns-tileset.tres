@@ -6,7 +6,7 @@
 [resource]
 0/name = "pos_dark_up"
 0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
+0/tex_offset = Vector2( 4, -160 )
 0/modulate = Color( 0.588235, 0.470588, 0.470588, 0.831373 )
 0/region = Rect2( 0, 0, 32, 192 )
 0/tile_mode = 0
@@ -15,12 +15,18 @@
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": null,
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
 1/name = "pos_dark_down"
 1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
+1/tex_offset = Vector2( 4, 0 )
 1/modulate = Color( 0.588235, 0.470588, 0.470588, 0.831373 )
 1/region = Rect2( 32, 0, 32, 192 )
 1/tile_mode = 0
@@ -34,7 +40,7 @@
 1/z_index = 0
 2/name = "pos_light_up"
 2/texture = ExtResource( 2 )
-2/tex_offset = Vector2( 0, 0 )
+2/tex_offset = Vector2( 4, -160 )
 2/modulate = Color( 0.164706, 0.0784314, 0.235294, 0.831373 )
 2/region = Rect2( 0, 0, 32, 192 )
 2/tile_mode = 0
@@ -48,7 +54,7 @@
 2/z_index = 0
 3/name = "pos_light_down"
 3/texture = ExtResource( 2 )
-3/tex_offset = Vector2( 0, 0 )
+3/tex_offset = Vector2( 4, 0 )
 3/modulate = Color( 0.164706, 0.0784314, 0.235294, 0.831373 )
 3/region = Rect2( 32, 0, 32, 192 )
 3/tile_mode = 0

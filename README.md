@@ -12,3 +12,7 @@
 - [ ] Implement piece movement
 - [ ] Implement piece blocking
 - [ ] Implement piece removal
+
+## Reference
+
+* https://www.247backgammon.org/
