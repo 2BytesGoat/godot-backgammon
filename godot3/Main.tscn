@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Die.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dice.gd" type="Script" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39, 14.5 )
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Board" parent="." instance=ExtResource( 1 )]
 
@@ -27,4 +29,5 @@ position = Vector2( -25, 0 )
 [node name="Die2" parent="Dice" instance=ExtResource( 2 )]
 position = Vector2( 25, 0 )
 
+[connection signal="dice_done_rolling" from="Dice" to="." method="_on_Dice_dice_done_rolling"]
 [connection signal="input_event" from="Dice/DiceRollbox" to="Dice" method="_on_DiceRollbox_input_event"]

@@ -28,8 +28,8 @@ format = 1
 tile_data = PoolIntArray( 65536, 3, 0, 65538, 1, 0, 65540, 3, 0, 65542, 1, 0, 65544, 3, 0, 65546, 1, 0, 65550, 3, 0, 65552, 1, 0, 65554, 3, 0, 65556, 1, 0, 65558, 3, 0, 65560, 1, 0, 524288, 0, 0, 524290, 2, 0, 524292, 0, 0, 524294, 2, 0, 524296, 0, 0, 524298, 2, 0, 524302, 0, 0, 524304, 2, 0, 524306, 0, 0, 524308, 2, 0, 524310, 0, 0, 524312, 2, 0 )
 
 [node name="Checkers" type="TileMap" parent="."]
-position = Vector2( 6, 32 )
+position = Vector2( -4, 32 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 20, 32 )
+cell_size = Vector2( 40, 32 )
 centered_textures = true
 format = 1
