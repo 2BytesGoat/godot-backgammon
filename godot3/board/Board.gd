@@ -3,11 +3,18 @@ extends Node2D
 var board = {}
 
 onready var checkers_tilemap = get_node("Checkers")
+onready var highlights_tilemap = get_node("Highlights")
 
 onready var checker_tiles = [
 	checkers_tilemap.tile_set.find_tile_by_name("player_1"),
 	checkers_tilemap.tile_set.find_tile_by_name("player_2")
 ]
+
+func _input(_event):
+	if Input.is_action_just_pressed("left_click"):
+		var clicked_pos = checkers_tilemap.last_clicked_piece
+		if clicked_pos['value'] != checkers_tilemap.INVALID_CELL:
+			highlights_tilemap.highlight_pattern_cell(clicked_pos['position'])
 
 func _ready():
 	_init_board_space()
@@ -28,6 +35,13 @@ func add_checkers(groups: Array, tile_idx: int):
 			place_piece_on_board(col_idx, row_idx, tile_idx)
 
 func place_piece_on_board(col_idx, row_idx, tile_idx):
+	var tilemap_coords = board_coords_to_tileset_coords(col_idx, row_idx)
+	if tilemap_coords == null:
+		return
+	var tile = checker_tiles[tile_idx]
+	checkers_tilemap.set_cell(tilemap_coords.x, tilemap_coords.y, tile)
+
+func board_coords_to_tileset_coords(col_idx, row_idx):
 	var cols_per_sector = int(GameMeta.meta["board_info"]["columns_per_sector"])
 	var sector_idx = ceil(col_idx / cols_per_sector)
 	
@@ -46,5 +60,4 @@ func place_piece_on_board(col_idx, row_idx, tile_idx):
 		return
 	elif sector_idx in [2, 3] and (x_pos > sector_corners[1][0] or y_pos > sector_corners[1][1]):
 		return
-	var tile = checker_tiles[tile_idx]
-	checkers_tilemap.set_cell(x_pos, y_pos, tile)
+	return Vector2(x_pos, y_pos)
